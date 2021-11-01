@@ -1,0 +1,17 @@
+node_modules
+.DS_Store
+dist/*
+!dist/static
+dist-ssr
+*.local
+
+src/main/_.js
+src/main/_.js.map
+tmp
+**/.tmp
+release
+.vscode
+
+src/render/public/pdf
+pdf
+java

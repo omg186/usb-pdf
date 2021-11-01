@@ -1,0 +1,55 @@
+.app-usb-layout {
+  .ant-layout-header {
+    height: var(--header-height);
+    background-color: #fff;
+    padding: 0 10px;
+    border-bottom: 2px solid rgba(226, 227, 228, 0.75);
+    line-height: normal;
+    .header-right,
+    .header-center,
+    .header-left {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .header-center {
+      &-box {
+        width: 70px;
+        height: 66px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        cursor: pointer;
+        &-img {
+          max-width: 22px;
+          max-height: 28px;
+          margin-bottom: 5px;
+        }
+      }
+    }
+    .header-right {
+      .you_icon,
+      .zuo_icon {
+        cursor: pointer;
+      }
+      &-input {
+        border: 1px solid #e1e3e6;
+        border-radius: 2px;
+        width: 100%;
+        text-align: center;
+        margin: 0px 14px;
+        height: 25px;
+        line-height: 25px;
+
+        input {
+          border: none;
+          outline: none;
+          text-align: right;
+          width: 40px;
+          height: 100%;
+        }
+      }
+    }
+  }
+}

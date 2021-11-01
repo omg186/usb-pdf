@@ -1,0 +1,73 @@
+.usb-login-wrap {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  .usb-login {
+    min-width: 300px;
+    height: 300px;
+    &-logo {
+      max-height: 80px;
+      max-width: 80px;
+      margin: 0 auto;
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+    &-title {
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      color: #333333;
+    }
+    &-form {
+      margin-top: 60px;
+      // 表单输入框
+      .ant-input {
+        border-color: #bfbfbf;
+        border-width: 0px;
+        border-bottom-width: 2px;
+        text-align: center;
+        font-size: 16px;
+        color: #999;
+        padding: 16px 0px;
+        &:hover,
+        &:focus {
+          border-color: transparent;
+          border-bottom-color: #bfbfbf;
+          box-shadow: none;
+        }
+        &-focused {
+          box-shadow: none;
+        }
+      }
+      .ant-form-item-explain-error {
+        text-align: center;
+        transition: none;
+
+        div {
+          text-align: center;
+          margin: 0 auto;
+        }
+      }
+      &-btn {
+        margin-top: 30px;
+        height: 46px;
+        border-radius: 10px;
+        &.ant-btn-primary[disabled],
+        &.ant-btn-primary[disabled]:hover,
+        &.ant-btn-primary[disabled]:focus,
+        &.ant-btn-primary[disabled]:active {
+          color: rgba(0, 0, 0, 0.25);
+          background: #bfbfbf;
+          border-color: #d9d9d9;
+          text-shadow: none;
+          box-shadow: none;
+        }
+      }
+    }
+  }
+}
