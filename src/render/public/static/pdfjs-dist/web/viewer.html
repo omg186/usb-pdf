@@ -484,10 +484,7 @@ See https://github.com/adobe-type-tools/cmap-resources
                 >
                   <span data-l10n-id="findbar_label">Find</span>
                 </button>
-                <div
-                  class="splitToolbarButton hiddenSmallView"
-                  style="display: none"
-                >
+                <div class="splitToolbarButton hiddenSmallView">
                   <button
                     class="toolbarButton pageUp"
                     title="Previous Page"
@@ -509,7 +506,6 @@ See https://github.com/adobe-type-tools/cmap-resources
                   </button>
                 </div>
                 <input
-                  style="display: none"
                   type="number"
                   id="pageNumber"
                   class="toolbarField pageNumber"
@@ -521,11 +517,7 @@ See https://github.com/adobe-type-tools/cmap-resources
                   data-l10n-id="page"
                   autocomplete="off"
                 />
-                <span
-                  id="numPages"
-                  class="toolbarLabel"
-                  style="display: none"
-                ></span>
+                <span id="numPages" class="toolbarLabel"></span>
               </div>
               <div id="toolbarViewerRight">
                 <button
@@ -920,6 +912,7 @@ See https://github.com/adobe-type-tools/cmap-resources
     <div id="menu">
       <!-- <div class="menu" onclick="handleBookmark">书签</div> -->
       <div class="menu" onclick="handleComment()">点击标注</div>
+      <div class="menu" onclick="handleCopy()">点击复制</div>
       <!-- <div class="menu">功能3</div>
       <div class="menu">功能4</div>
       <div class="menu">功能5</div> -->
@@ -1196,6 +1189,16 @@ See https://github.com/adobe-type-tools/cmap-resources
     }
     function handleCommentConfirm() {
       handleCommentClose();
+    }
+    document.addEventListener("copy", (event) => {
+      console.log(event, commentOption.text);
+      if (commentOption.text) {
+        event.clipboardData.setData("text/plain", commentOption.text);
+        event.preventDefault();
+      }
+    }); // 增加copy监听
+    function handleCopy(e) {
+      document.execCommand("copy");
     }
     function handleComment() {
       // const comment = document.getElementById("comment-container");

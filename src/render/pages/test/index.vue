@@ -12,10 +12,10 @@
       ref="iframe"
       name="pdfJsHtml"
     ></iframe>
-    <div class="page-container" v-if="pageBtnVisble">
+    <!-- <div class="page-container" v-if="pageBtnVisble">
       <img src="@/assets/image/shangyiye_icon.png" @click="handlePagePrev" />
       <img src="@/assets/image/xiayiye_icon.png" @click="handlePageNext" />
-    </div>
+    </div> -->
   </div>
 </template>
 

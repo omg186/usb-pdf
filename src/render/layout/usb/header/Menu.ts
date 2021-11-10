@@ -53,6 +53,13 @@ export const Menu: IMenu[] = [
     params: "category",
   },
   {
+    id: 10,
+    name: "搜索",
+    typeClick: "PDFFIND",
+    params: "pageFind",
+    icon: sousuo_icon,
+  },
+  {
     id: 3,
     name: "手型工具",
     typeClick: "PDFTOOL",
@@ -108,13 +115,7 @@ export const Menu: IMenu[] = [
     params: "print",
     icon: dayin,
   },
-  {
-    id: 10,
-    name: "搜索",
-    typeClick: "PDFFIND",
-    params: "pageFind",
-    icon: sousuo_icon,
-  },
+
   {
     id: 11,
     name: "帮助",

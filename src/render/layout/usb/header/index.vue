@@ -35,7 +35,7 @@
           </a-col>
         </a-row>
       </a-col>
-      <a-col :flex="0.2" class="header-right">
+      <!-- <a-col :flex="0.2" class="header-right">
         <img
           class="zuo_icon"
           src="@/assets/image/zuo_icon.png"
@@ -50,7 +50,7 @@
           src="@/assets/image/you_icon.png"
           @click="handleNext"
         />
-      </a-col>
+      </a-col> -->
     </a-row>
   </a-layout-header>
 </template>
