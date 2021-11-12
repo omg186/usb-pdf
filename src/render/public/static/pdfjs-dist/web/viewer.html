@@ -1314,7 +1314,8 @@ See https://github.com/adobe-type-tools/cmap-resources
       }
     }
     function initRender() {
-      console.log(window.PDFViewerApplication.pdfViewer, "pdf-view");
+      console.log(window.PDFViewerApplication, "pdf-view");
+      $("#find-title").text(PDFViewerApplication._docFilename);
       const { spreadMode, currentScale } =
         window.PDFViewerApplication.pdfViewer;
       window.parent.postMessage(
@@ -1331,7 +1332,6 @@ See https://github.com/adobe-type-tools/cmap-resources
     function searchText(params) {
       console.log(params, "------params-----");
       findBar(false);
-      $("#find-title").text(params);
       window.PDFViewerApplication.findBar.findField.value = params;
       window.PDFViewerApplication.findBar.dispatchEvent("");
     }
