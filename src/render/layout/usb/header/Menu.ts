@@ -23,6 +23,7 @@ export interface IMenu {
     | "PDF"
     | "MENU"
     | "PDFROTATE"
+    | "HELP"
     | "PDFTOOL"
     | "PDFFIND"
     | "PRINT"
@@ -119,6 +120,7 @@ export const Menu: IMenu[] = [
   {
     id: 11,
     name: "帮助",
+    typeClick: "HELP",
     icon: bangzhu_icon,
   },
   {

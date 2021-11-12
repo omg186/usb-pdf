@@ -52,11 +52,23 @@
         />
       </a-col> -->
     </a-row>
+    <!-- <a-button type="primary" @click="showModal">Open Modal</a-button> -->
+    <a-modal
+      v-model:visible="visible"
+      title="帮助"
+      @ok="handleOk"
+      width="100%"
+      wrapClassName="full-modal"
+      :footer="null"
+    >
+      <HelpPage />
+    </a-modal>
   </a-layout-header>
 </template>
 
 
 <script lang='ts'>
+import HelpPage from "@/pages/help.vue";
 import { computed, createVNode, defineComponent, onMounted, ref } from "vue";
 import { IMenu, Menu } from "./Menu";
 import { mapActions, mapGetters, useStore } from "vuex";
@@ -68,6 +80,24 @@ import { ExclamationCircleOutlined } from "@ant-design/icons-vue";
 
 export default defineComponent({
   name: "header",
+  components: { HelpPage },
+  setup() {
+    const visible = ref<boolean>(false);
+
+    const showModal = () => {
+      visible.value = true;
+    };
+
+    const handleOk = (e: MouseEvent) => {
+      console.log(e);
+      visible.value = false;
+    };
+    return {
+      visible,
+      showModal,
+      handleOk,
+    };
+  },
   data() {
     return {
       Menu,
@@ -243,6 +273,9 @@ export default defineComponent({
             );
           }
           break;
+        case "HELP":
+          this.showModal();
+          break;
         case "QUIT":
           Modal.confirm({
             title: "退出",
@@ -267,7 +300,24 @@ export default defineComponent({
   },
 });
 </script>
-
+<style lang="less">
+.full-modal {
+  .ant-modal {
+    max-width: 100%;
+    top: 0;
+    padding-bottom: 0;
+    margin: 0;
+  }
+  .ant-modal-content {
+    display: flex;
+    flex-direction: column;
+    // height: calc(100vh);
+  }
+  .ant-modal-body {
+    flex: 1;
+  }
+}
+</style>
 <style lang="less">
 .app-usb-layout {
   .ant-layout-header {

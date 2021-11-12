@@ -78,6 +78,16 @@ See https://github.com/adobe-type-tools/cmap-resources
       .mark-my {
         background-color: blue !important;
       }
+      #toolbarViewer {
+        position: relative;
+      }
+      #toolbarViewer #find-title {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%);
+        transform: translateY(-50%);
+      }
     </style>
   </head>
 
@@ -458,6 +468,7 @@ See https://github.com/adobe-type-tools/cmap-resources
         <div class="toolbar">
           <div id="toolbarContainer">
             <div id="toolbarViewer">
+              <h3 id="find-title"></h3>
               <div id="toolbarViewerLeft">
                 <button
                   id="sidebarToggle"
@@ -1320,6 +1331,7 @@ See https://github.com/adobe-type-tools/cmap-resources
     function searchText(params) {
       console.log(params, "------params-----");
       findBar(false);
+      $("#find-title").text(params);
       window.PDFViewerApplication.findBar.findField.value = params;
       window.PDFViewerApplication.findBar.dispatchEvent("");
     }
