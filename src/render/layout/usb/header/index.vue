@@ -57,7 +57,7 @@
       v-model:visible="visible"
       title="帮助"
       @ok="handleOk"
-      width="100%"
+      width="80%"
       wrapClassName="full-modal"
       :footer="null"
     >
@@ -304,7 +304,7 @@ export default defineComponent({
 .full-modal {
   .ant-modal {
     max-width: 100%;
-    top: 0;
+    top: 20px;
     padding-bottom: 0;
     margin: 0;
   }
