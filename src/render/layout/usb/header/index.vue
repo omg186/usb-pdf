@@ -58,7 +58,6 @@
       title="帮助"
       @ok="handleOk"
       width="80%"
-      wrapClassName="full-modal"
       :footer="null"
     >
       <HelpPage />
@@ -306,7 +305,7 @@ export default defineComponent({
     max-width: 100%;
     top: 20px;
     padding-bottom: 0;
-    margin: 0;
+    margin: 0 auto;
   }
   .ant-modal-content {
     display: flex;
