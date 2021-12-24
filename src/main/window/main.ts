@@ -15,8 +15,8 @@ export class Main extends WinSubscribe {
   public open() {
     this.win = new BrowserWindow({
       ...options,
-      width: 1920,
-      height: 1080,
+      width: 1280,
+      height: 768,
       // frame: !app.isPackaged, // 打包后去掉边框
       ...this.opts,
     });
